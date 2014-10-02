@@ -1,0 +1,31 @@
+install.packages("MASS")
+library(MASS)
+caith
+# Q1
+# "caith" contains comparisons between two different variables.
+# They appear to be hair and eye color.
+# Q2
+EyeColor <- rowSums(caith)
+#EyeColor contains the total amount of people with each color eye
+# Q3
+HairColor <- colSums(caith)
+# Q4
+hist(EyeColor)
+# This histogram does not show amounts of each variable, since
+# it is qualitative data
+# Q5
+caitha <- as.matrix(caith)
+# This changes "caith" from a data frame into a matrix
+# Q6
+barplot(t(as.matrix(caith)))
+# This function creats a barplot showing the total amount for each
+# eye color, with a breakdown of each by hair color as well, however
+# it does not label each individual hair color
+# Q7
+barplot(t(as.matrix(caith)), beside = TRUE)
+# Q8
+cor(EyeColor, HairColor)
+plot(EyeColor, HairColor)
+# I do not see any relationships between hair and eye color from
+# looking at the charts. Attempts to use R code to find relationships
+# were unsuccessful as they do not have equal numbers of variables.
